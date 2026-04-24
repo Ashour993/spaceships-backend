@@ -1,5 +1,6 @@
 package com.spaceship.spaceship.Services;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,10 @@ public class WorldService {
     }
 public World addWorld(World world) {
     return worldRepository.insert(world);
+}
+
+public List<World> getWorlds() {
+    return worldRepository.findAll();
 }
     public World getWorldByName(String worldName) {
         return worldRepository.findByWorldNameLikeAllIgnoreCase(worldName);

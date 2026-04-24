@@ -1,5 +1,6 @@
 package com.spaceship.spaceship.Controllers;
 
+import java.util.List;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spaceship.spaceship.Models.World;
@@ -22,6 +23,11 @@ public class WorldController {
 
     public WorldController(WorldService worldService) {
         this.worldService = worldService;
+    }
+
+    @GetMapping("/worlds")
+    public List<World> getWorlds() {
+        return worldService.getWorlds();
     }
 
     @PostMapping("/world")
