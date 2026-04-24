@@ -16,10 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 
-@CrossOrigin(origins = "http://localhost:5173")
-
-
+@CrossOrigin(origins = "https://clownfish-app-62pl3.ondigitalocean.app")
 @RestController
+       
 public class SpaceshipController {
 
     private SpaceshipService spaceshipService;
@@ -45,12 +44,12 @@ public class SpaceshipController {
     
     
     
-     @PostMapping("/spaceship")
+     @PostMapping("/spaceships")
      public SpaceShip addSpaceship(@RequestBody SpaceShip spaceship){
      return spaceshipService.addSpaceship(spaceship);
      }
 
-     @DeleteMapping("/spaceship/{id}") 
+     @DeleteMapping("/spaceships/{id}") 
      public String deleteSpaceShip(@PathVariable String id) {
             spaceshipService.deleteSaceShip(id);
         return "{ message: Spaceship with id " + id + " has been deleted.)";
